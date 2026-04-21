@@ -1,0 +1,21 @@
+pipeline{
+	agent any
+
+	stages {
+	stage(checkout){
+		steps {
+			git branch 'main':url
+		}
+	}
+	stages(build){
+		steps {
+			echo "Building"
+		}
+	}
+	stages(Test){
+		Steps {
+			echo "Testiy"
+			}
+		}
+	}
+}
