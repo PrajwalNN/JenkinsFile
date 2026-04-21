@@ -1,21 +1,23 @@
-pipeline{
-	agent any
+pipeline {
+    agent any
 
-	stages {
-	stage(checkout){
-		steps {
-			git branch 'master':https://github.com/PrajwalNN/JenkinsFile.git
-		}
-	}
-	stages(build){
-		steps {
-			echo "Building"
-		}
-	}
-	stages(Test){
-		Steps {
-			echo "Testiy"
-			}
-		}
-	}
+    stages {
+        stage('checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/PrajwalNN/JenkinsFile.git'
+            }
+        }
+
+        stage('build') {
+            steps {
+                echo "building"
+            }
+        }
+
+        stage('test') {
+            steps {
+                echo "testing"
+            }
+        }
+    }
 }
